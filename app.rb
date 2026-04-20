@@ -3,6 +3,9 @@ require 'pg'
 require 'json'
 require 'securerandom'
 
+# emulate launch time
+sleep 10
+
 logger = Logger.new(STDERR)
 
 # table initialize
@@ -48,7 +51,7 @@ def random_slug
 end
 
 post '/api/v1/url' do
-  raise 'error'
+  Process.kill('SEGV', Process.pid) if rand(5) > 3 if rand(5) > 3
   content_type :json
 
   # ignore the case that has duplicated long_url, it's NORMAL
