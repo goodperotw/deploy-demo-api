@@ -3,8 +3,6 @@ require 'pg'
 require 'json'
 require 'securerandom'
 
-sleep 10
-
 logger = Logger.new(STDERR)
 
 # table initialize
@@ -50,6 +48,7 @@ def random_slug
 end
 
 post '/api/v1/url' do
+  raise 'error'
   content_type :json
 
   # ignore the case that has duplicated long_url, it's NORMAL
