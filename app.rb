@@ -103,6 +103,12 @@ post '/api/v1/url' do
   { data: { slug: result.first['slug'] } }.to_json
 end
 
+get '/api/v1/hi' do
+  content_type :json
+
+  { message: 'hi' }.to_json
+end
+
 get '/:slug' do
   query_sql = <<~SQL
     SELECT long_url FROM url_mappings
