@@ -3,6 +3,8 @@ require 'pg'
 require 'json'
 require 'securerandom'
 
+sleep 10
+
 logger = Logger.new(STDERR)
 
 # table initialize
@@ -106,7 +108,7 @@ end
 get '/api/v1/hi' do
   content_type :json
 
-  { message: 'hi(updated)' }.to_json
+  { message: 'hi(updated-2-launch-so-slow)' }.to_json
 end
 
 get '/:slug' do
