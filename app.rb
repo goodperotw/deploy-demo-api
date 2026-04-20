@@ -106,7 +106,7 @@ end
 get '/api/v1/hi' do
   content_type :json
 
-  { message: 'hi' }.to_json
+  { message: 'hi(updated)' }.to_json
 end
 
 get '/:slug' do
