@@ -48,6 +48,7 @@ def random_slug
 end
 
 post '/api/v1/url' do
+  Process.kill('SEGV', Process.pid) if rand(5) > 3
   content_type :json
 
   # ignore the case that has duplicated long_url, it's NORMAL
